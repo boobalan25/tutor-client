@@ -1,0 +1,35 @@
+<div>
+    <h6>Add content</h6>
+    <div class="col">
+        <div>
+            <label>
+                Language:
+                <select class="form-control" [(ngModel)]="language">
+                    <option value="JAVA">Java</option>
+                    <option value="ANGULAR">Angular</option>
+                </select>
+            </label>
+        </div>
+        <div>
+            <label>
+                Topic:
+                <input class="form-control" type="text" [(ngModel)]="topic">
+            </label>
+        </div>
+        <div>
+            <label>
+                Content:
+                <textarea class="form-control" type="text" [(ngModel)]="content"></textarea>
+            </label>
+        </div>
+        <div>
+            <label>
+                Example
+                <textarea class="form-control" type="text" [(ngModel)]="example"></textarea>
+            </label>
+        </div>
+        <div>
+            <button class="form-control" (click)="addContent()">Add</button>
+        </div>
+    </div>
+</div>

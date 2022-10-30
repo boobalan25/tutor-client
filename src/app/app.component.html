@@ -1,0 +1,68 @@
+<div style="height: 100%;">
+  <mat-drawer-container style="height: 100%;" [hasBackdrop]="true">
+    <mat-drawer #drawer [mode]="'side'" style="width: 300px;">
+      <div class="m-2">
+        <div class="card">
+          <div data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false"
+            aria-controls="multiCollapseExample1" class="card-header shadow-lg bg-white rounded cursor-pointer">
+            Java
+          </div>
+          <div class="collapse multi-collapse" id="multiCollapseExample1">
+            <div routerLink="content/java-overview" class="card-body shadow-lg bg-white rounded cursor-pointer">
+              Java Overview
+            </div>
+            <div routerLink="content/java-installation" class="card-body shadow-lg bg-white rounded cursor-pointer">
+              Java Installation
+            </div>
+            <div routerLink="content/java-basics" class="card-body shadow-lg bg-white rounded cursor-pointer">
+              Java Basics
+            </div>
+            <div routerLink="content/java-oops-concept" class="card-body shadow-lg bg-white rounded cursor-pointer">
+              OOPs Concept
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div routerLink="addContent" (click)="changeScreen('ADDCONTENT')" class="card-header shadow-lg bg-white rounded cursor-pointer">
+            ADD CONTENT
+          </div>
+        </div>
+      </div>
+    </mat-drawer>
+    <mat-drawer-content>
+      <div class="col-lg-12">
+        <div class="card h-100">
+          <div class="card-header shadow-lg bg-white rounded" style="display: flex; width: 100%;">
+            <div style="width: 50%; display: flex;">
+              <mat-icon (click)="drawer.toggle()">menu</mat-icon>
+              <h5 class="ml-4" style="font-family: 'Segoe UI'; color: darkcyan;">Z Tutorial - {{currentScreen.charAt(0).toUpperCase() + currentScreen.slice(1)}}</h5>
+            </div>
+            <div style="width: 50%; font-weight: bold;">
+              <a (click)="changeScreen('LOGIN')" class="cursor-pointer float-right">LOGIN</a>
+              <a (click)="changeScreen('REGISTER')" class="cursor-pointer float-right mr-3">REGISTER</a>
+            </div>
+          </div>
+          <div class="card" style="height: 100%;">
+            <router-outlet>
+            </router-outlet>
+          </div>
+          <!-- <div *ngIf="(currentScreen==='MAIN')" class="card-body shadow-lg bg-white rounded">
+            <app-content-viewer></app-content-viewer>
+          </div>
+          <div *ngIf="(currentScreen==='CONTENT')" class="card-body shadow-lg bg-white rounded">
+            <app-content-viewer></app-content-viewer>
+          </div>
+          <div *ngIf="(currentScreen==='LOGIN')" class="card-body shadow-lg bg-white rounded">
+            <app-login></app-login>
+          </div>
+          <div *ngIf="(currentScreen==='REGISTER')" class="card-body shadow-lg bg-white rounded">
+            <app-register></app-register>
+          </div>
+          <div *ngIf="(currentScreen==='ADDCONTENT')" class="card-body shadow-lg bg-white rounded">
+            <app-add-content></app-add-content>
+          </div> -->
+        </div>
+      </div>
+    </mat-drawer-content>
+  </mat-drawer-container>
+</div>
